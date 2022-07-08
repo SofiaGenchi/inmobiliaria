@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+:root{
+    --primary-color: #f60f20;
+    --secondary-color: #1b206e;
+    --principal-color: rgb(143, 107, 73);
+    --mainTransition: all 0.3s linear;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    color: #111;
+}
+
+h1{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+p{
+    margin: 20px 0 10px;
+    font-size: 1.1rem;
+}
+
+section{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    padding: 100px;
+    margin-top: 60px;
+}
+
+section .home{
+    flex-direction: row;
+    margin-top: 0;
+}
+
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    background: var(--principal-color);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin: 20px 0;
+    border: 0;
+}
+
+.btn:hover{
+    transform: scale(0.98);
+}
+
+.logo{
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    font-size: 2rem;
+    font-weight: 700;
+    z-index: 20;
+}
+
+.logo h1{
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    font-size: 2rem;
+    font-weight: 700;
+    z-index: 20;
+}
+
+.toggle{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--principal-color) url(./img/menu.png);
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.toggle.active{
+    background: var(--principal-color) url(./img/close.png);
+    background-size: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.navigation{
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation.active{
+    left: 0;
+}
+
+.navigation ul{
+    position: relative;
+}
+
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    text-align: center;
+}
+
+.navigation ul li a{
+    font-size: 2.2rem;
+    color: #111;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.navigation ul li a:hover{
+    color: var(--principal-color);
+}
+
+.navigation .social-bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation .social-bar a{
+    display: inline-block;
+    transform: scale(0.5);
+}
+
+ion-icon{
+    font-size: 65px;
+}
+
+.home-content{
+    position: relative;
+    z-index: 10;
+    max-width: 600px;
+}
+
+.home-img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 110%;
+}
+
+/* Pagina de Propiedades */
+.propiedades{
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.section-title h1{
+    text-align: center;
+    margin-bottom: 5rem;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+.products-center{
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+}
+
+.img-container{
+    position: relative;
+    overflow: hidden;
+}
+
+.bag-btn{
+    position: absolute;
+    top: 70%;
+    right: 0;
+    background-color: var(--principal-color);
+    border: none;
+    text-transform: uppercase;
+    padding: 0.5rem 0.75rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: var(--mainTransition);
+    transform: translateX(101%);
+}
+
+.img-container:hover .bag-btn{
+    transform: translateX(0);
+}
+
+.prop-img{
+    display: block;
+    width: 100%;
+    min-height: 12rem;
+    transition: var(--mainTransition);
+}
+
+.img-container:hover .prop-img{
+    opacity: 0.5;
+}
+
+.propiedad h3 {
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    letter-spacing: var(--mainSpacing);
+    text-align: center;
+}
+  
+.propiedad h4 {
+    margin-top: 0.7rem;
+    letter-spacing: var(--mainSpacing);
+    color: var(--primaryColor);
+    text-align: center;
+}
+
+/* Pagina noticas */
+.post-list{
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+}
+
+.post-list .content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.post-img-1{
+    background: url(./img/dolar.jpg);
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: .2s;
+}
+
+.post-img-2{
+    background: url(./img/escritura.jpg);
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: .2s;
+}
+
+.post-img-3{
+    background: url(./img/arquitectura.jpg);
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: .2s;
+}
+
+.post{
+    box-shadow: 0 1px 6px 1px rgba(0, 0, 0, .1);
+    overflow: hidden;
+    transition: .2s;
+}
+
+.post:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 1px 14px 2px rgba(0, 0, 0, .15);
+}
+
+.post-header{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.post:hover .post-img-1, .post:hover .post-img-2, .post:hover .post-img-3{
+    transform: scale(1.1);
+}
+
+.post-body{
+    padding: 15px;
+}
+
+.post-body span{
+    display: inline-block;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.post-body h2{
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.post-body p{
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.post-body .post-link{
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    background: var(--principal-color);
+    color: white;
+    width: 50%;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, .1);
+    transition: .2s;
+    text-align: center;
+}
+
+.post-body .post-link:hover{
+    background: burlywood;
+    box-shadow: 1px 2px 6px 1px rgba(0, 0, 0, .2);
+    transform: translateY(2px);
+}
+
+@media (max-width: 840px){
+    .post-list .content{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 608px){
+    .post-list .content{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Pagina de CONTACTO */
+#contacto{
+    display: block;
+}
+
+#contacto .container{
+    display: grid;
+    grid-template-columns: 20rem auto;
+    gap: 15rem;
+}
+
+#contacto aside{
+    background: var(--principal-color);
+    padding: 2rem;
+    font-size: 0.9rem;
+    color: white;
+}
+
+#contacto aside h1{
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+#contacto aside article{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+#contacto aside article ion-icon{
+    font-size: 1.2rem;
+}
+
+#contacto aside article h5{
+    font-weight: 600;
+}
+
+/* Formulario de contacto */
+#contacto form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contacto form input, #contacto form textarea{
+    padding: 1.4rem;
+    background: var(--principal-color);
+    height: 10px;
+    width: 450px;
+    color: white;
+}
+
+#contacto form textarea{
+    height: 10rem;
+}
+
+#contacto form input::placeholder, #contacto form textarea::placeholder{
+    color: white;
+}
+
+#contacto form input:focus, #contacto form textarea:focus{
+    background: black;
+}
+
+#contacto form button{
+    width: 8rem;
+    background: var(--principal-color);
+    color: black;
+}
+
+#contacto form button:hover{
+    background: burlywood;
+}
